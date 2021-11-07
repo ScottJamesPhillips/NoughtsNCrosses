@@ -11,26 +11,32 @@ namespace NoughtsNCrosses
 	{
 		public static void GameEngine(string[] boardNums, int currPlayer)
 		{
-			try
+			bool notValidMove = true;
+			do
 			{
-				User userInput = new User();
-				userInput.userInputNum = Console.ReadLine();
-				int gamePlaceMarker = User.CheckUserEnterNumber(userInput.userInputNum);
-				Board.CheckPositionExists(boardNums, gamePlaceMarker);
-				Board.CheckIfPositionFilled(boardNums, gamePlaceMarker);
-
-				
-
-				if (Enumerable.Range(1, 9).Contains(gamePlaceMarker))
+				try
 				{
-					Console.Clear();
-					boardNums[gamePlaceMarker - 1] = User.GetCurrentUserSymbol(currPlayer);
+					User userInput = new User();
+					userInput.userInputNum = Console.ReadLine();
+					int gamePlaceMarker = User.CheckUserEnterNumber(userInput.userInputNum);
+					Board.CheckPositionExists(boardNums, gamePlaceMarker);
+					Board.CheckIfPositionFilled(boardNums, gamePlaceMarker);
+					if (!string.IsNullOrEmpty(userInput.userInputNum) && Enumerable.Range(1, 9).Contains(gamePlaceMarker))
+					{
+						Console.Clear();
+						boardNums[gamePlaceMarker - 1] = User.GetCurrentUserSymbol(currPlayer);
+						notValidMove = false;
+					}
+					//else
+					//{
+					//	//Console.WriteLine("Problem occurred");
+					//}
 				}
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.Message);
-			}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+			} while (notValidMove);
 		}
 	}
 }

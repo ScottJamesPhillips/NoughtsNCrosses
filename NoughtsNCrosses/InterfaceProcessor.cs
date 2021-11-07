@@ -24,6 +24,7 @@ namespace NoughtsNCrosses.Interfaces
 				int currPlayerNum = 10;
 				do
 				{
+					//Console.Clear();
 					currPlayerNum = User.NextPlayerNum(currPlayerNum);
 					WelcomeMsg();
 					Board.DrawGraph(boardNum, currPlayerNum);

@@ -27,6 +27,7 @@ namespace NoughtsNCrosses.Interfaces
 			if (currentMarker.Equals("X") || currentMarker.Equals("O"))
 			{
 				throw new Exception($"Place '{gamePlaceMarker}' has already been assigned.");
+				//Console.WriteLine($"Place '{gamePlaceMarker}' has already been assigned.");
 			}
 		}
 
@@ -35,6 +36,7 @@ namespace NoughtsNCrosses.Interfaces
 			if (boardNums.Length < gamePlaceMarker)
 			{
 				throw new Exception($"Place '{gamePlaceMarker}' does not exist on play board.");
+				//Console.WriteLine($"Place '{gamePlaceMarker}' does not exist on play board.");
 			};
 		}
 	}
