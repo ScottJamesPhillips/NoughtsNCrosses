@@ -22,6 +22,7 @@ namespace NoughtsNCrosses.Interfaces
 			{
 				string[] boardNum = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 				int currPlayerNum = 10;
+				int gameStatus = 0;
 				do
 				{
 					//Console.Clear();
@@ -29,8 +30,21 @@ namespace NoughtsNCrosses.Interfaces
 					WelcomeMsg();
 					Board.DrawGraph(boardNum, currPlayerNum);
 					Engine.GameEngine(boardNum, currPlayerNum);
+					gameStatus = Engine.CheckWinner(boardNum, currPlayerNum);
 				}
-				while (true);
+				while (gameStatus.Equals(0));
+				if (gameStatus.Equals(1))
+				{
+					WelcomeMsg();
+					Board.DrawGraph(boardNum, currPlayerNum);
+					Console.WriteLine($"Player {currPlayerNum} is the winner!");
+				}
+				if (gameStatus.Equals(2))
+				{
+					WelcomeMsg();
+					Board.DrawGraph(boardNum, currPlayerNum);
+					Console.WriteLine("It's a tie!");
+				}
 			}
 			catch (Exception ex)
 			{

@@ -51,6 +51,8 @@ namespace NoughtsNCrosses
                         //InitialiseSettings();
                         processor = new InterfaceProcessor(mainLog, new ErrorHandler(new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray()), errorLog));
                         processor.CentralProcess();
+                        Console.WriteLine("Press any button to close console");
+                        Console.ReadLine();
                     }
                     catch (Exception ex)
                     {
@@ -63,19 +65,5 @@ namespace NoughtsNCrosses
                 errorLog.AddErrorEntry(ex.Message);
             }
         }
-
-        //static void InitialiseSettings()
-        //{
-        //    try
-        //    {
-
-        //    }
-        //    catch
-        //    {
-        //        string str = "Unable to initialise interface. Please App.config data. ";
-        //        Console.WriteLine(str);
-        //        throw;
-        //    }
-        //}
     }
 }
