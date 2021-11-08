@@ -27,17 +27,15 @@ namespace NoughtsNCrosses.Interfaces
 			if (currentMarker.Equals("X") || currentMarker.Equals("O"))
 			{
 				throw new Exception($"Place '{gamePlaceMarker}' has already been assigned.");
-				//Console.WriteLine($"Place '{gamePlaceMarker}' has already been assigned.");
 			}
 		}
 
 		public static void CheckPositionExists(string[] boardNums, int gamePlaceMarker)
 		{
-			if (boardNums.Length < gamePlaceMarker)
+			if (Array.IndexOf(boardNums, gamePlaceMarker.ToString())==-1)
 			{
 				throw new Exception($"Place '{gamePlaceMarker}' does not exist on play board.");
-				//Console.WriteLine($"Place '{gamePlaceMarker}' does not exist on play board.");
-			};
+			}
 		}
 	}
 }
