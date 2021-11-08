@@ -27,10 +27,6 @@ namespace NoughtsNCrosses
 						boardNums[gamePlaceMarker - 1] = User.GetCurrentUserSymbol(currPlayer);
 						notValidMove = false;
 					}
-					//else
-					//{
-					//	//Console.WriteLine("Problem occurred");
-					//}
 				}
 				catch (Exception ex)
 				{
@@ -39,12 +35,12 @@ namespace NoughtsNCrosses
 			} while (notValidMove);
 		}
 
-		public static int CheckWinner(string[] boardNums, int currPlayer)
+		public static int CheckWinner(string[] boardNums)
 		{
-			if (IsGameDraw(boardNums))
-				return 2;
 			if (IsGameWinner(boardNums))
 				return 1;
+			if (IsGameDraw(boardNums))
+				return 2;
 			else
 				return 0;
 		}
