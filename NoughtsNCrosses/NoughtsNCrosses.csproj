@@ -44,14 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine.cs" />
-    <Compile Include="ErrorHandler.cs" />
     <Compile Include="Board.cs" />
-    <Compile Include="Interfaces\IErrorHandler.cs" />
-    <Compile Include="Interfaces\IInterfaceProcessor.cs" />
-    <Compile Include="Interfaces\ILogFile.cs" />
     <Compile Include="InterfaceProcessor.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Logging\LogFileEntry.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

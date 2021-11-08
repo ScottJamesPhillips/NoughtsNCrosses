@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace NoughtsNCrosses.Interfaces
 {
-	public class InterfaceProcessor:IInterfaceProcessor
+	public class InterfaceProcessor
 	{
-		public ILogFile mainLog { get; set; }
-		public IErrorHandler errorHandler { get; set; }
-		public InterfaceProcessor(ILogFile mainLog, IErrorHandler errorHandler)
-		{
-			this.errorHandler = errorHandler;
-			this.mainLog = mainLog;
-		}
 
 		public void CentralProcess()
 		{
