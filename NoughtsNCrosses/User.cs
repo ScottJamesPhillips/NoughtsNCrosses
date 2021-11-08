@@ -26,8 +26,6 @@ namespace NoughtsNCrosses.Interfaces
 			else
 			{
 				throw new Exception("Did you actually enter a number?...");
-				//Console.WriteLine("Did you actually enter a number?...");
-				//throw new Exception();
 			}
 		}
 

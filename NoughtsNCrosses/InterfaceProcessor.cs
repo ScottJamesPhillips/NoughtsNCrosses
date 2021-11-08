@@ -18,12 +18,11 @@ namespace NoughtsNCrosses.Interfaces
 				int gameStatus = 0;
 				do
 				{
-					//Console.Clear();
 					currPlayerNum = User.NextPlayerNum(currPlayerNum);
 					WelcomeMsg();
 					Board.DrawGraph(boardNum, currPlayerNum);
 					Engine.GameEngine(boardNum, currPlayerNum);
-					gameStatus = Engine.CheckWinner(boardNum, currPlayerNum);
+					gameStatus = Engine.CheckWinner(boardNum);
 				}
 				while (gameStatus.Equals(0));
 				if (gameStatus.Equals(1))
