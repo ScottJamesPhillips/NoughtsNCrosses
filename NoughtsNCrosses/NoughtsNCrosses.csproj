@@ -52,7 +52,6 @@
     <Compile Include="InterfaceProcessor.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Logging\LogFileEntry.cs" />
-    <Compile Include="Logging\LogFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
