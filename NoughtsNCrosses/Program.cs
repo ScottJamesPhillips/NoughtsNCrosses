@@ -12,8 +12,6 @@ namespace NoughtsNCrosses
 	class Program
 	{
 		private static string appGuid = "01101994-noughts-n-crosses";
-		public static string ErrorLogFileName { get; set; } = "noughts-&-crosses_Error.log";
-		public static string MainLogFileName { get; set; } = "Main.log";
 		public static string AppPath { get; private set; } = AppDomain.CurrentDomain.BaseDirectory;
 		static void Main(string[] args)
 		{
